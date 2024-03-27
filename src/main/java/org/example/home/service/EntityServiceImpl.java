@@ -1,15 +1,19 @@
 package org.example.home.service;
 
-import org.example.home.dao.DaoImpl;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import org.example.home.dao.Dao;
 import org.example.home.entity.Department;
 import org.example.home.entity.Employee;
 
 import java.util.TreeMap;
 
-public class ServiceImpl implements Service {
 
-    private final Dao dao = new DaoImpl();
+@Service
+@RequiredArgsConstructor
+public class EntityServiceImpl implements EntityService {
+
+    private final Dao dao;
 
     @Override
     public void addEmployee(Employee employee) {

@@ -1,8 +1,10 @@
 package org.example.home;
 
+import org.example.home.dao.DaoImpl;
+import org.example.home.dbconfig.DBConfig;
 import org.example.home.entity.Department;
 import org.example.home.entity.Employee;
-import org.example.home.service.ServiceImpl;
+import org.example.home.service.EntityServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,10 +12,11 @@ public class Main {
         Department department = new Department();
         Department department1 = new Department();
 
+
         Employee employee = new Employee();
         Employee employee1 = new Employee();
 
-        ServiceImpl employeeServiceImpl = new ServiceImpl();
+        EntityServiceImpl employeeServiceImpl = new EntityServiceImpl(new DaoImpl(new DBConfig()));
 
         employeeServiceImpl.addEmployee(employee);
         employeeServiceImpl.addEmployee(employee1);

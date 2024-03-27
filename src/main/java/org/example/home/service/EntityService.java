@@ -5,7 +5,7 @@ import org.example.home.entity.Employee;
 
 import java.util.TreeMap;
 
-public interface Service {
+public interface EntityService {
 
     void addEmployee(Employee employee);
 
