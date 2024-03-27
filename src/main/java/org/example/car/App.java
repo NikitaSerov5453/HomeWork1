@@ -1,8 +1,5 @@
 package org.example.car;
 
-import org.example.car.Audi;
-import org.example.car.CarConfig;
-import org.example.car.Porsche;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App 

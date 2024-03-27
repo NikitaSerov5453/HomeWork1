@@ -2,7 +2,7 @@ package org.example.home;
 
 import org.example.home.entity.Department;
 import org.example.home.entity.Employee;
-import org.example.home.service.Service;
+import org.example.home.service.ServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,18 +13,18 @@ public class Main {
         Employee employee = new Employee();
         Employee employee1 = new Employee();
 
-        Service service = new Service();
+        ServiceImpl employeeServiceImpl = new ServiceImpl();
 
-        service.addEmployee(employee);
-        service.addEmployee(employee1);
+        employeeServiceImpl.addEmployee(employee);
+        employeeServiceImpl.addEmployee(employee1);
 
-        service.addDepartment(department);
-        service.addDepartment(department1);
+        employeeServiceImpl.addDepartment(department);
+        employeeServiceImpl.addDepartment(department1);
 
-        System.out.println(service.getAllEmployee());
-        System.out.println(service.getAllDepartment());
+        System.out.println(employeeServiceImpl.getAllEmployee());
+        System.out.println(employeeServiceImpl.getAllDepartment());
 
-        service.updateEmployeeSurname(employee, "Серов");
-        System.out.println(service.getAllEmployee());
+        employeeServiceImpl.updateEmployeeSurname(employee, "Серов");
+        System.out.println(employeeServiceImpl.getAllEmployee());
     }
 }

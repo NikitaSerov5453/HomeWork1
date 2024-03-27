@@ -1,63 +1,29 @@
 package org.example.home.service;
 
-import org.example.home.dao.AppDao;
-import org.example.home.dao.Dao;
 import org.example.home.entity.Department;
 import org.example.home.entity.Employee;
 
 import java.util.TreeMap;
 
-public class Service implements ServiceAll {
+public interface Service {
 
-    private final Dao dao = new AppDao();
+    void addEmployee(Employee employee);
 
-    @Override
-    public void addEmployee(Employee employee) {
-        dao.addEmployee(employee);
-    }
+    void updateEmployeeName(Employee employee, String name);
 
-    @Override
-    public void updateEmployeeName(Employee employee, String name) {
-        dao.updateEmployeeName(employee, name);
-    }
+    void updateEmployeeSurname(Employee employee, String surname);
 
-    @Override
-    public void updateEmployeeSurname(Employee employee, String surname) {
-        dao.updateEmployeeSurname(employee, surname);
-    }
+    void updateEmployeeSalary(Employee employee, Long salary);
 
-    @Override
-    public void updateEmployeeSalary(Employee employee, Long salary) {
-        dao.updateEmployeeSalary(employee, salary);
-    }
+    void deleteEmployeeById(Long id);
 
-    @Override
-    public void deleteEmployeeById(Long id) {
-        dao.deleteByEmployeeId(id);
-    }
+    void addDepartment(Department department);
 
-    @Override
-    public void addDepartment(Department department) {
-        dao.addDepartment(department);
-    }
+    void updateDepartmentName(Department department, String departmentName);
 
-    @Override
-    public void updateDepartmentName(Department department, String departmentName) {
-        dao.updateDepartmentName(department, departmentName);
-    }
+    void deleteDepartmentById(Long id);
 
-    @Override
-    public void deleteDepartmentById(Long id) {
-        dao.deleteByDepartmentId(id);
-    }
+    TreeMap<Long, Employee> getAllEmployee();
 
-    @Override
-    public TreeMap<Long, Employee> getAllEmployee() {
-        return dao.getAllEmployee();
-    }
-
-    @Override
-    public TreeMap<Long, Department> getAllDepartment() {
-        return dao.getAllDepartment();
-    }
+    TreeMap<Long, Department> getAllDepartment();
 }

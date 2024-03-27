@@ -1,14 +1,18 @@
 package org.example.home.dao;
 
+import lombok.RequiredArgsConstructor;
 import org.example.home.dbconfig.DBConfig;
 import org.example.home.entity.Department;
 import org.example.home.entity.Employee;
+import org.springframework.stereotype.Repository;
 
 import java.util.TreeMap;
 
-public class AppDao implements Dao{
-    private final DBConfig dbConfig = new DBConfig();
+@Repository
+@RequiredArgsConstructor
+public class DaoImpl implements Dao {
 
+    private final DBConfig dbConfig;
 
     @Override
     public void addEmployee(Employee employee) {
